@@ -2,6 +2,20 @@
 
 Run npm install && npm start
 
+**Game Play Example**
+
+Creating the game
+
+curl -d '{"dimensions": 3}' -H "Content-Type: application/json" -X POST http://localhost:8911/api/game
+
+Placing X on top left
+
+curl -d '{"row": 1, "col":1, "char": "X"  }' -H "Content-Type: application/json" -X PUT http://localhost:8911/api/game
+
+Placing O in middle
+
+curl -d '{"row": 2, "col":2, "char": "X"  }' -H "Content-Type: application/json" -X PUT http://localhost:8911/api/game
+
 **API Documentation**                  
 
 **Verb**: GET
@@ -183,3 +197,5 @@ Json Object:
 **StatusCode**: 400(Bad Request, assuming it's player one's turn and he is O not X)
 
 Response: StatusCode 400: Player 1 must place an O
+
+
