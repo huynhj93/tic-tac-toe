@@ -20,6 +20,7 @@ class Game {
   }
 
   // insert jsdoc block here
+  // Marks a certain square at the rowIdx and colIdx with the char, which is an X or an O.
   markSquare(rowIdx, colIdx, char) {
     if ((!rowIdx && rowIdx != 0) || (!colIdx && colIdx != 0) || !char) {
       throw 'Missing fields... \n';
@@ -131,6 +132,7 @@ class Game {
   }
   // ===== End of Functions to check if a coordinate is along the main/anti  diagnol ========   
 
+  // Resets initial state of board
   resetBoard() {
     this.gameBoard = [];
     for (let i = 0; i < this.dimension; i++) {
@@ -144,6 +146,8 @@ class Game {
     this.playerTwo = null;
   }
 
+
+  // Renders the game board
   render() {
     const displayedRows = [];
     this.gameBoard.forEach((row, index, rows) => {
