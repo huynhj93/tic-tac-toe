@@ -21,17 +21,9 @@ class Game {
 
   // insert jsdoc block here
   markSquare(rowIdx, colIdx, char) {
-    console.log('='.repeat(10), 'rowIdx', '='.repeat(10), '\n', rowIdx);
-    console.log('='.repeat(10), 'colIdx', '='.repeat(10), '\n', colIdx);
-    console.log('='.repeat(10), 'char', '='.repeat(10), '\n', char);
     if ((!rowIdx && rowIdx != 0) || (!colIdx && colIdx != 0) || !char) {
       throw 'Missing fields... \n';
     }
-    console.log('='.repeat(10), 'wtf', '='.repeat(10), '\n', this.colIdx >= this.dimension);
-    console.log('='.repeat(10), 'colidx', '='.repeat(10), '\n', typeof colIdx);
-    console.log('='.repeat(10), 'colidx', '='.repeat(10), '\n', colIdx);
-    console.log('='.repeat(10), 'dimension', '='.repeat(10), '\n', typeof this.dimension);
-    console.log('='.repeat(10), 'dimension', '='.repeat(10), '\n', this.dimension);
     if (rowIdx >= this.dimension || colIdx >= this.dimension || rowIdx < 0 || colIdx < 0) {
       throw 'Out of bounds error!';
     }
@@ -181,72 +173,3 @@ class Game {
 }
 
 module.exports = Game;
-
-// Tied Game
-// const game = new Game(3);
-// console.log(game.render());
-// console.log('='.repeat(10), 'player one going', '='.repeat(10), '\n');
-// console.log(game.markSquare(1,1, 'X'));
-// console.log(game.render());
-// console.log('='.repeat(10), 'player two going', '='.repeat(10), '\n');
-// console.log(game.markSquare(1,2, 'O'));
-// console.log(game.render());
-// console.log('='.repeat(10), 'player one going', '='.repeat(10), '\n');
-// console.log(game.markSquare(1,0, 'X'));
-// console.log(game.render());
-// console.log(game.markSquare(2,2, 'O'));
-// console.log(game.render());
-// console.log(game.markSquare(0,2, 'X'));
-// console.log(game.render());
-// console.log(game.markSquare(2,0, 'O'));
-// console.log(game.render());
-// console.log(game.markSquare(2,1, 'X'));
-// console.log(game.render());
-// console.log(game.markSquare(0,1, 'O'));
-// console.log(game.render());
-// console.log(game.markSquare(0,0, 'X'));
-// console.log(game.render());
-
-// Player One Wins
-// const game = new Game(3);
-// console.log(game.render());
-// console.log('='.repeat(10), 'player one going', '='.repeat(10), '\n');
-// console.log(game.markSquare(1,1, 'X'));
-// console.log(game.render());
-// console.log('='.repeat(10), 'player two going', '='.repeat(10), '\n');
-// console.log(game.markSquare(1,2, 'O'));
-// console.log(game.render());
-// console.log('='.repeat(10), 'player one going', '='.repeat(10), '\n');
-// console.log(game.markSquare(1,0, 'X'));
-// console.log(game.render());
-// console.log(game.markSquare(2,2, 'O'));
-// console.log(game.render());
-// console.log(game.markSquare(2,0, 'X'));
-// console.log(game.render());
-// console.log(game.markSquare(0,2, 'O'));
-// console.log(game.render());
-
-// Player Two Wins Anti Diagnol
-// const game = new Game(5);
-// console.log(game.render());
-// console.log('='.repeat(10), 'player one going', '='.repeat(10), '\n');
-// console.log(game.markSquare(1,1, 'X'));
-// console.log(game.render());
-// console.log('='.repeat(10), 'player two going', '='.repeat(10), '\n');
-// console.log(game.markSquare(1,2, 'O'));
-// console.log(game.render());
-// console.log('='.repeat(10), 'player one going', '='.repeat(10), '\n');
-// console.log(game.markSquare(1,0, 'X'));
-// console.log(game.render());
-// console.log('='.repeat(10), 'player two going', '='.repeat(10), '\n');
-// console.log(game.markSquare(2,2, 'O'));
-// console.log(game.render());
-// console.log('='.repeat(10), 'player one going', '='.repeat(10), '\n');
-// console.log(game.markSquare(0,2, 'X'));
-// console.log(game.render());
-// console.log('='.repeat(10), 'player two going', '='.repeat(10), '\n');
-// console.log(game.markSquare(0,0, 'O'));
-// console.log(game.render());
-// console.log('='.repeat(10), 'player One going', '='.repeat(10), '\n');
-// console.log(game.markSquare(2,0, 'X'));
-// console.log(game.render());

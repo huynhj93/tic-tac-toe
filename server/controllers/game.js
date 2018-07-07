@@ -3,7 +3,6 @@ const dataStore = require('../data-store');
 
 function createGame(req, res, next) {
   try {
-    console.log('='.repeat(10), 'req body', '='.repeat(10), '\n', req.body);
     if (!req.body.dimensions) {
       return next({
         message: 'Please specify the dimensions of the board \n',
@@ -11,7 +10,6 @@ function createGame(req, res, next) {
       })
     }
     dataStore.game = new Game(req.body.dimensions);
-    console.log('='.repeat(10), 'game created!', '='.repeat(10), '\n', dataStore.game);
     res.status(201).send(dataStore.game.render());
   } catch (e) {
     return next({
@@ -47,9 +45,6 @@ function updateGame(req, res, next) {
       })
     }
     // Zero based array, subtract 1
-    console.log('='.repeat(10), 'req body is', '='.repeat(10), '\n', req.body.row);
-    console.log('='.repeat(10), 'req body is', '='.repeat(10), '\n', req.body.col);
-    console.log('='.repeat(10), 'req body is', '='.repeat(10), '\n', req.body.char);
     dataStore.game.markSquare(req.body.row - 1, req.body.col - 1, req.body.char);
     return res.send(dataStore.game.render());
   } catch (err) {
